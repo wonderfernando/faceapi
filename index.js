@@ -9,17 +9,14 @@ faceapi.env.monkeyPatch({ Canvas, Image, ImageData })
 
 
  
-
-async function det() {
-     await faceapi.nets.ssdMobilenetv1.loadFromDisk(resolve(__dirname,"public","models"))
-     await faceapi.nets.tinyFaceDetector.loadFromDisk(resolve(__dirname,"public","models"))
-     await faceapi.nets.faceLandmark68Net.loadFromDisk(resolve(__dirname,"public","models"))
-    await faceapi.nets.faceRecognitionNet.loadFromDisk(resolve(__dirname,"public","models"))
-
-    
-}
-
+ 
 const server = http.createServer(async (req, res)=>{
+ 
+  await faceapi.nets.ssdMobilenetv1.loadFromDisk(resolve(__dirname,"public","models"))
+  await faceapi.nets.tinyFaceDetector.loadFromDisk(resolve(__dirname,"public","models"))
+  await faceapi.nets.faceLandmark68Net.loadFromDisk(resolve(__dirname,"public","models"))
+ await faceapi.nets.faceRecognitionNet.loadFromDisk(resolve(__dirname,"public","models"))
+
   const input = await canvas.loadImage("./img.jpg")
   const input2 = await canvas.loadImage("./1111.png")
 

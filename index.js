@@ -31,5 +31,5 @@ const server = http.createServer(async (req, res)=>{
 
 })
 
-server.listen(process.env.PORT,async()=>{await det(); console.log("running")})
+server.listen(process.env.PORT,async()=>{ console.log("running")})
 

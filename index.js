@@ -18,7 +18,7 @@ const server = http.createServer(async (req, res)=>{
  await faceapi.nets.faceRecognitionNet.loadFromDisk(resolve(__dirname,"public","models"))
 
   const input = await canvas.loadImage("./img.jpg")
-  const input2 = await canvas.loadImage("./1111.png")
+  const input2 = await canvas.loadImage("./imagem.jpg")
 
   console.log("rodando")
   const single = await faceapi.detectSingleFace(input2).withFaceLandmarks().withFaceDescriptor()
